@@ -11,6 +11,10 @@ import { createMenuObjects } from '../helpers/createMenuObjects';
 export const search = (req: Request, res: Response) => {
     let query: string = req.query.q as string; // Recebe o valor da query da URL
     let list = Pet.getFromName(query); // Busca os pets pelo nome
+    if(!query) { // Se não houver query
+        res.redirect('/'); // Redireciona para a home
+        return; // Encerra a função
+    }
     res.render('pages/page', { // Renderiza a página home.mustache
         menu: createMenuObjects(''),
         list,
