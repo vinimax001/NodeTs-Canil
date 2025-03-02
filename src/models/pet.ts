@@ -149,7 +149,7 @@ export const Pet = {
         return data.filter(item => item.type ===type);
     },
     
-    // Método que retorna um array de objetos Pet filtrados pelo nome
+    // Método que retorna um array de objetos Pet filtrados pelo nome (pesquisa)
     getFromName: (name: string): Pet[] => {
         return data.filter(item => 
             item.name.toLowerCase().indexOf(name.toLowerCase()) > -1 
