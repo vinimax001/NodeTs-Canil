@@ -1,23 +1,45 @@
-import express from 'express'; // Importando o express
-import dotenv from 'dotenv'; // Importando o dotenv
-import mustache from 'mustache-express';   // Importando o mustache
-import path from 'path'; // Importando o path
-import mainRoutes from './routes/index'; // Importando as rotas
+// Importando o express
+import express from 'express';
 
-dotenv.config(); // Carregando as variáveis de ambiente
+// Importando o dotenv
+import dotenv from 'dotenv';
 
-const server = express(); // Inicializando o servidor
-server.set('view engine', 'mustache'); // Definindo o motor de visualização
-server.set('views', path.join(__dirname, 'views')); // Definindo o diretório de views
-server.engine('mustache', mustache()); // Definindo o motor de visualização
+// Importando o mustache
+import mustache from 'mustache-express';
 
-server.use(express.static(path.join(__dirname, '../public'))); // Definindo o diretório de arquivos estáticos
+// Importando o path
+import path from 'path';
+
+// Importando as rotas
+import mainRoutes from './routes/index';
+
+// Carregando as variáveis de ambiente
+dotenv.config();
+
+// Inicializando o servidor
+const server = express();
+
+// Definindo o motor de visualização
+server.set('view engine', 'mustache');
+
+// Definindo o diretório de views
+server.set('views', path.join(__dirname, 'views'));
+
+// Definindo o motor de visualização
+server.engine('mustache', mustache());
+
+// Definindo o diretório de arquivos estáticos
+server.use(express.static(path.join(__dirname, '../public')));
 
 // Rota principal
-server.use(mainRoutes); // Definindo as rotas
 
-server.use((req, res) => { // Rota de erro
-    res.send('Página não encontrada!'); // Mensagem de erro
+// Definindo as rotas
+server.use(mainRoutes);
+
+// Rota de erro 404
+server.use((req, res)=>{
+    res.render('pages/404'); // Renderiza a página 404.mustache
 });
 
-server.listen(process.env.PORT); // Inicializando o servidor na porta definida no arquivo .env
+// Inicializando o servidor na porta definida no arquivo .env
+server.listen(process.env.PORT);
