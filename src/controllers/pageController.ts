@@ -1,8 +1,7 @@
 import { Request, Response } from 'express'; // Importação do express module
 
 export const home = (req: Request, res: Response) => { // Função que renderiza a página inicial
-    res.send('Página inicial!'); // Mensagem de página inicial
-    //res.render('pages/page'); // Renderiza a página home.mustache
+    res.render('pages/page'); // Renderiza a página home.mustache
 }
 
 export const dogs = (req: Request, res: Response) => { // Função que renderiza a página de cachorros

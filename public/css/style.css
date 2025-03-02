@@ -119,6 +119,11 @@ footer {
     text-align: center;
     font-size: 16px;
     color: var(--main);
+    position: fixed; /* Fixa o footer na parte inferior da tela */
+    bottom: 0; /* Posiciona o footer na parte inferior da tela */
+    left: 0; /* Garante que o footer comece na borda esquerda da tela */
+    width: 100%; /* Garante que o footer ocupe 100% da largura da tela */
+    background-color: white; /* Adiciona uma cor de fundo para evitar sobreposição de conteúdo */
 }
 
 @media (max-width: 900px) {
