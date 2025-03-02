@@ -2,7 +2,7 @@
 
 ![Imagem do projeto finalizado](/public/images/projetocanil.gif)
 
-<h4 align="center"><a href="https://github.com/vinimax001/NodeTs-Canil">Confira o projeto aqui</a></h4>
+<h4 align="center"><a href="https://node-ts-canil-8vsg3huc1-viniciusdevs-projects.vercel.app/">Confira o projeto aqui</a></h4>
 
 ---
 
@@ -44,7 +44,7 @@ Neste projeto apliquei os seguintes pontos:
       <img src="https://github.com/vinimax001.png" width="100px" />
     </td>
     <td>
-      Feito por <a href="https://node-ts-canil-8vsg3huc1-viniciusdevs-projects.vercel.app/">Vinicius Aguiar.</a> 🙋🏿‍♂️
+      Feito por <a href="https://github.com/vinimax001">Vinicius Aguiar.</a> 🙋🏿‍♂️
     </td>
   </tr>
 </table>
