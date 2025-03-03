@@ -2,7 +2,7 @@
 
 ![Imagem do projeto finalizado](/public/images/projetocanil.gif)
 
-<h4 align="center"><a href="https://projeto-canil-viniciusdevs-projects.vercel.app/">Confira o projeto aqui</a></h4>
+<h4 align="center"><a href="https://projeto-canil-ri459e5ic-viniciusdevs-projects.vercel.app/">Confira o projeto aqui</a></h4>
 
 ---
 
