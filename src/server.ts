@@ -31,8 +31,6 @@ server.engine('mustache', mustache());
 // Definindo o diretório de arquivos estáticos
 server.use(express.static(path.join(__dirname, '../public')));
 
-// Rota principal
-
 // Definindo as rotas
 server.use(mainRoutes);
 
@@ -41,5 +39,10 @@ server.use((req, res)=>{
     res.render('pages/404'); // Renderiza a página 404.mustache
 });
 
-// Inicializando o servidor na porta definida no arquivo .env
-server.listen(process.env.PORT);
+
+const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000; // Converte para número e define um padrão
+
+server.listen(PORT, '0.0.0.0', () => { 
+    // Usando 'server' e '0.0.0.0'
+  console.log(`Server running on http://0.0.0.0:${PORT}`);
+});
