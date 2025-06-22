@@ -1,0 +1,18 @@
+version: '3.8' # Especifica a versão da sintaxe do Docker Compose
+
+services:
+  # Serviço principal da sua aplicação Node.js
+  app:
+    build: # Define que a imagem será construída a partir de um Dockerfile
+      context: . # O contexto da build é o diretório atual onde o docker-compose.yml está
+      dockerfile: Dockerfile # O nome do Dockerfile a ser usado (se for diferente, altere aqui)
+    container_name: projeto-canil-dev # Nome amigável para o container durante o desenvolvimento
+    ports:
+      - "3000:3000" # Mapeia a porta 3000 do seu host para a porta 3000 do container
+
+    volumes:
+      - .:/app # Mapeia o diretório atual do host para o diretório /app no container
+      - /app/node_modules # Impede que a pasta node_modules do host sobrescreva a do container
+
+    # Garante que o container será reiniciado automaticamente em caso de falha ou reinício do Docker
+    restart: always

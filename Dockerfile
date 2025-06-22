@@ -32,7 +32,7 @@ RUN npm install --omit=dev
 # Copia os arquivos construídos (o diretório 'dist') do stage 'builder'
 COPY --from=builder /app/dist ./dist
 
-# --- NOVO: Copia a pasta 'public' do estágio builder para o estágio de produção ---
+# Copia a pasta 'public' do estágio builder para o estágio de produção ---
 COPY --from=builder /app/public ./public
 
 # Expõe a porta em que sua aplicação escuta
